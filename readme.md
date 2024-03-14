@@ -1,5 +1,10 @@
 # Colecciones de datos y clases genéricas
 
+
+<img src="https://github.com/profeMelola/Programacion-06-2023-24/assets/91023374/52e131c6-408e-4176-af26-b0b0ca677f7b" width="20%"/>
+
+<sub>Fuente: OpenWebMinars</sub>
+
 ## Contenidos
 
 Teoría en el aula virtual: https://aulavirtual3.educa.madrid.org/ies.alonsodeavellan.alcala/course/view.php?id=526#section-17
