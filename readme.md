@@ -1,7 +1,7 @@
 # Colecciones de datos y clases genéricas
 
 
-<img src="https://github.com/profeMelola/Programacion-06-2023-24/assets/91023374/52e131c6-408e-4176-af26-b0b0ca677f7b" width="20%"/>
+<img src="https://github.com/profeMelola/Programacion-06-2023-24/assets/91023374/52e131c6-408e-4176-af26-b0b0ca677f7b" width="50%"/>
 
 <sub>Fuente: OpenWebMinars</sub>
 
