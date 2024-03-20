@@ -55,10 +55,10 @@ public class EjemploList {
 
         List<Persona> listaPersonas = new LinkedList<>();
 
-        listaPersonas.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1990, 1, 2)));
+        listaPersonas.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1992, 3, 4)));
         listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
         listaPersonas.add(new Persona("34567890C", "Ana", "Ramírez", LocalDate.of(1992, 3, 4)));
-        listaPersonas.add(new Persona("45678901D", "María", "López", LocalDate.of(1993, 4, 5)));
+        listaPersonas.add(new Persona("45678901D", "María", "López", LocalDate.of(1992, 3, 4)));
 
         // Recorrer la lista completa
         System.out.println("Listado completo de personas:");
@@ -107,25 +107,47 @@ public class EjemploList {
         Persona Alfonso = new Persona("67890123F", "Alfonso", "García", LocalDate.of(1995, 6, 7));
         System.out.println(Alfonso);
 
-        //int pos = Collections.binarySearch(listaPersonas, Alfonso); // requisito que Persona implements Comparable
+        // int pos = Collections.binarySearch(listaPersonas, Alfonso); // requisito que
+        // Persona implements Comparable
 
-        // Comparator<Persona> byNombre = (pa, pb) -> pa.getNombre().compareTo(pb.getNombre());
+        // Comparator<Persona> byNombre = (pa, pb) ->
+        // pa.getNombre().compareTo(pb.getNombre());
         // Collections.sort(listaPersonas, byNombre);
         // int pos = Collections.binarySearch(listaPersonas, Alfonso, byNombre);
 
-        //System.out.println("posición encontrada:" + pos);
+        // System.out.println("posición encontrada:" + pos);
+        // ----------------------------------------------
 
+        // ----------------------------------------------
         // BORRANDO OBJETOS (POR POSICIÓN)
         // if (pos >= 0)
-        //     listaPersonas.remove(pos);
+        // listaPersonas.remove(pos);
 
         // BORRANDO OBJETOS (EQUALS)
         listaPersonas.remove(Alfonso);
 
-
         System.out.println("\nLista actualizada tras borrar:");
         for (Persona per : listaPersonas)
             System.out.println(per);
+        // ----------------------------------------------
+
+        // ----------------------------------------------
+        // PRÓXIMAMENTE.... API STREAM...
+        // ----------------------------------------------
+        System.out.println("\nLista actualizada tras borrar (con API STREAM):");
+        listaPersonas.stream().sorted().forEach(System.out::println);
+
+        System.out.println("\nLista actualizada tras borrar y ordenar por apellidos (con API STREAM):");
+        listaPersonas.stream()
+                .sorted(Comparator.comparing(Persona::getApellidos))
+                .forEach(System.out::println);
+
+        System.out.println("\nLista actualizada tras borrar y ordenar por fecha y nombre (con API STREAM):");
+        Comparator<Persona> comparatorByName = (pa, pb) -> pa.getNombre().compareTo(pb.getNombre());
+        Comparator<Persona> comparatorByFechaNac = (pa, pb) -> pa.getFechaNacimiento().compareTo(pb.getFechaNacimiento());
+        listaPersonas.sort(comparatorByFechaNac.thenComparing(comparatorByName));
+        listaPersonas.forEach(System.out::println);
+        // ----------------------------------------------
 
     }
 
