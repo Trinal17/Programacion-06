@@ -17,6 +17,7 @@ public class EjemploListEnteros {
         System.out.println("** ARRAYLIST ENTEROS 1 *");
         System.out.println("**************************************************");
 
+        // Forma tradicional
         ArrayList<Integer> listInt = new ArrayList<>();
         listInt.add(3);
         listInt.add(4);
@@ -26,40 +27,49 @@ public class EjemploListEnteros {
         listInt.add(1);
         listInt.add(7);
 
-        System.out.println("* Lista de enteros no ordenada");
-        listInt.forEach(System.out::println);
+        // Factorias para poder crear colecciones
+        List<Integer> listInt2 = List.of(1,2,5,7,9,19);
+
+        System.out.println("* Lista de enteros no ordenada (for..)");
+        for (Integer i : listInt2) {
+            System.out.println(i);
+        }
+
+        System.out.println("* Lista de enteros no ordenada (forEach)");
+        listInt2.forEach(System.out::println);
+
+        System.out.println("* Lista de enteros no ordenada (->)");
+        listInt2.forEach( i -> System.out.println(i));
+        listInt2.forEach( (i) -> {
+            System.out.println(i);
+        });
 
         System.out.println("* Lista de enteros inversa:");
         Collections.reverse(listInt);
-        listInt.forEach(System.out::println);
+        listInt2.forEach(System.out::println);
 
         System.out.println("* Lista de enteros ordenada por defecto (ascendente):");
-        // Forma 1
+
         System.out.println("\tForma 1: con Collections.sort");
         Collections.sort(listInt);
-        listInt.forEach(System.out::println);
-
-        // Forma 2
-        System.out.println("\tForma 2 con sort del ArrayList");
-        listInt.sort(Comparator.naturalOrder());
-        listInt.forEach(System.out::println);
+        listInt2.forEach(System.out::println);
 
         System.out.println("* Lista de enteros ordenada descendente:");
         // Forma 1
         System.out.println("\tForma 1: con Collections.sort");
-        Collections.sort(listInt, Comparator.reverseOrder());
-        listInt.forEach(System.out::println);
+        Collections.sort(listInt2, Comparator.reverseOrder());
+        listInt2.forEach(System.out::println);
 
         // Forma 2
         System.out.println("\tForma 2 con sort del ArrayList");
-        listInt.sort(Comparator.reverseOrder());
-        listInt.forEach(System.out::println);
+        listInt2.sort(Comparator.reverseOrder());
+        listInt2.forEach(System.out::println);
 
         System.out.println("**************************************************");
         System.out.println("** ARRAYLIST ENTEROS 2 *");
         System.out.println("**************************************************");
 
-        List<Integer> listInt2 = Arrays.asList(4, 5, 1, 2, 8, 9, 6);
+        List<Integer> listInt3 = Arrays.asList(4, 5, 1, 2, 8, 9, 6);
 
         // El resto igual .....
 
