@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import modelo.Persona;
 
@@ -19,7 +21,7 @@ public class EjemploList {
      */
     public static void main(String[] args) {
 
-        // List<Persona> listaPersonas = new ArrayList<>();
+        
 
         // LINKEDLIST: Si no tenemos una buena razón para usar linkedlist
         // En términos de funcionalidad no habría diferencia ninguna
@@ -53,7 +55,8 @@ public class EjemploList {
          * LinkedList.
          */
 
-        List<Persona> listaPersonas = new LinkedList<>();
+         List<Persona> listaPersonas = new ArrayList<>();
+        //List<Persona> listaPersonas = new LinkedList<>();
 
         listaPersonas.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1992, 3, 4)));
         listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
@@ -84,21 +87,43 @@ public class EjemploList {
         for (Persona per : listaPersonas)
             System.out.println(per);
 
+        
+        // TRUQUI!!!!
+        Set<Persona> conjuntoPersonas = new TreeSet<>(listaPersonas);
+        System.out.println("\nConjunto de personas:");
+        conjuntoPersonas.forEach(System.out::println);
+
+        System.out.println("\nListado de personas por dni (método natural):");
+        Collections.sort(listaPersonas);
+        //Collections.reverse(listaPersonas);
+        // listaPersonas.sort(Comparator.naturalOrder());
+        // listaPersonas.sort(Comparator.reverseOrder());
+        listaPersonas.forEach(System.out::println);
+
         // Para ordenar, tenemos que aportar un orden
         // Será por fecha de nacimiento
-        listaPersonas.sort(new Comparator<Persona>() {
+        // listaPersonas.sort(new Comparator<Persona>() {
 
-            @Override
-            public int compare(Persona p1, Persona p2) {
-                return p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento());
-            }
+        //     @Override
+        //     public int compare(Persona p1, Persona p2) {
+        //         return p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento());
+        //     }
 
-        });
+        // });
 
-        // Recorremos la lista completa, ya ordenada
-        System.out.println("\nListado de personas por fecha de nacimiento:");
-        for (Persona per : listaPersonas)
-            System.out.println(per);
+        // // Recorremos la lista completa, ya ordenada
+        // System.out.println("\nListado de personas por fecha de nacimiento (forma 1):");
+        // for (Persona per : listaPersonas)
+        //     System.out.println(per);
+
+        System.out.println("\nListado de personas por fecha de nacimiento (forma lambda):");
+        listaPersonas.sort((p1,p2) -> p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento()));
+        listaPersonas.forEach(System.out::println);
+
+        System.out.println("\nListado de personas por apellidos (forma lambda):");
+        listaPersonas.sort((p1,p2) -> p1.getApellidos().compareTo(p2.getApellidos()));
+        listaPersonas.forEach(System.out::println);
+        
 
         // ------------------------------------------------
         // BUSCAR
