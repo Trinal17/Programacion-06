@@ -27,7 +27,7 @@ public class EjemploListEnteros {
         listInt.add(1);
         listInt.add(7);
 
-        // Factorias para poder crear colecciones
+        // Factory Methods para poder crear colecciones
         List<Integer> listInt2 = List.of(1,2,5,7,9,19);
 
         System.out.println("* Lista de enteros no ordenada (for..)");
