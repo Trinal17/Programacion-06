@@ -100,24 +100,34 @@ public class EjemploList {
         // listaPersonas.sort(Comparator.reverseOrder());
         listaPersonas.forEach(System.out::println);
 
-        // Para ordenar, tenemos que aportar un orden
-        // Será por fecha de nacimiento
-        // listaPersonas.sort(new Comparator<Persona>() {
 
-        //     @Override
-        //     public int compare(Persona p1, Persona p2) {
-        //         return p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento());
-        //     }
+        // ************** ORDENACIONES ******************
 
-        // });
+        // FORMA 1: COMPARATOR CLÁSICO DEL RnR
+        listaPersonas.sort(new ComparatorByNombre());
+        System.out.println("\nListado de personas por nombre (forma clásica):");
+        listaPersonas.forEach(System.out::println);
 
-        // // Recorremos la lista completa, ya ordenada
-        // System.out.println("\nListado de personas por fecha de nacimiento (forma 1):");
-        // for (Persona per : listaPersonas)
-        //     System.out.println(per);
+        
+        // FORMA 2: COMPARATOR ANÓNIMO
+        listaPersonas.sort(new Comparator<Persona>() {
 
-        System.out.println("\nListado de personas por fecha de nacimiento (forma lambda):");
-        listaPersonas.sort((p1,p2) -> p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento()));
+            @Override
+            public int compare(Persona p1, Persona p2) {
+                return p1.getNombre().compareTo(p2.getNombre());
+                //return p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento());
+            }
+
+        });
+        System.out.println("\nListado de personas por nombre (forma comparator anónimo):");
+        listaPersonas.forEach(System.out::println);
+
+        // FORMA 3: COMPARATOR CON LAMBDA
+        // System.out.println("\nListado de personas por fecha de nacimiento (forma lambda):");
+        // listaPersonas.sort((p1,p2) -> p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento()));
+
+        System.out.println("\nListado de personas por NOMBRE (forma lambda):");
+        listaPersonas.sort((p1,p2) -> p1.getNombre().compareTo(p2.getNombre()));
         listaPersonas.forEach(System.out::println);
 
         System.out.println("\nListado de personas por apellidos (forma lambda):");
@@ -132,11 +142,9 @@ public class EjemploList {
         Persona Alfonso = new Persona("67890123F", "Alfonso", "García", LocalDate.of(1995, 6, 7));
         System.out.println(Alfonso);
 
-        // int pos = Collections.binarySearch(listaPersonas, Alfonso); // requisito que
-        // Persona implements Comparable
+        // int pos = Collections.binarySearch(listaPersonas, Alfonso); // requisito que Persona implements Comparable
 
-        // Comparator<Persona> byNombre = (pa, pb) ->
-        // pa.getNombre().compareTo(pb.getNombre());
+        // Comparator<Persona> byNombre = (pa, pb) ->  pa.getNombre().compareTo(pb.getNombre());
         // Collections.sort(listaPersonas, byNombre);
         // int pos = Collections.binarySearch(listaPersonas, Alfonso, byNombre);
 
