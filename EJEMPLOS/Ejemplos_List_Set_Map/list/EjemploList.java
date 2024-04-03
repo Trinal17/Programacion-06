@@ -88,7 +88,7 @@ public class EjemploList {
             System.out.println(per);
 
         
-        // TRUQUI!!!!
+        // TRUQUI!!!! Eliminar personas repetidas
         Set<Persona> conjuntoPersonas = new TreeSet<>(listaPersonas);
         System.out.println("\nConjunto de personas:");
         conjuntoPersonas.forEach(System.out::println);
