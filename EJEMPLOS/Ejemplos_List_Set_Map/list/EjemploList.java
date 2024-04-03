@@ -167,6 +167,7 @@ public class EjemploList {
         // ----------------------------------------------
         // PRÓXIMAMENTE.... API STREAM...
         // ----------------------------------------------
+        System.out.println("***************** EJEMPLOS CON API STREAM ***********************");
         System.out.println("\nLista actualizada tras borrar (con API STREAM):");
         listaPersonas.stream().sorted().forEach(System.out::println);
 
@@ -180,6 +181,11 @@ public class EjemploList {
         Comparator<Persona> comparatorByFechaNac = (pa, pb) -> pa.getFechaNacimiento().compareTo(pb.getFechaNacimiento());
         listaPersonas.sort(comparatorByFechaNac.thenComparing(comparatorByName));
         listaPersonas.forEach(System.out::println);
+
+        System.out.println("\nLista de nombres de las personas:");
+        listaPersonas.stream()
+            .map(Persona::getNombre)
+            .forEach(System.out::println);
         // ----------------------------------------------
 
     }
