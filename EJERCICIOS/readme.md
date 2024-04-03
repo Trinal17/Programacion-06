@@ -38,3 +38,19 @@ Aleatoriamente:
 Si la cola llega a tener 10 personas suena un mensaje por megafonía diciendo que, por favor, Pepito Pérez vuelva a su puesto de trabajo en Caja. 
 
 Que se vea por consola todo el proceso (cada vez que alguien entra o sale de la cola y el mensaje por megafonía).
+
+# Ejercicio 3: practicando con comparators
+
+Utilizando la clase Persona, y partiendo de la lista, muestra diferentes listados:
+- Por dni.
+- Por nombre y apellidos.
+
+```
+        List<Persona> listaPersonas = new ArrayList<>();
+        
+        listaPersonas.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1992, 3, 4)));
+        listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
+        listaPersonas.add(new Persona("34567890C", "Ana", "Ramírez", LocalDate.of(1992, 3, 4)));
+        listaPersonas.add(new Persona("45678901D", "María", "López", LocalDate.of(1992, 3, 4)));
+
+```
