@@ -29,6 +29,7 @@ public class EjemploListEnteros {
 
         // Factory Methods para poder crear colecciones
         List<Integer> listInt2 = List.of(1,2,5,7,9,19);
+        // Tengo que hacer casting si quiero un ArrayList en vez de un List
         ArrayList<Integer> listInt3 = (ArrayList<Integer>) List.of(1,2,5,7,9,19);
 
         System.out.println("* Lista de enteros no ordenada (for..)");
@@ -70,7 +71,7 @@ public class EjemploListEnteros {
         System.out.println("** ARRAYLIST ENTEROS 2 *");
         System.out.println("**************************************************");
 
-        List<Integer> listInt3 = Arrays.asList(4, 5, 1, 2, 8, 9, 6);
+        List<Integer> listInt4 = Arrays.asList(4, 5, 1, 2, 8, 9, 6);
 
         // El resto igual .....
 
