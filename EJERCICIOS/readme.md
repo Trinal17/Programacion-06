@@ -42,7 +42,7 @@ Que se vea por consola todo el proceso (cada vez que alguien entra o sale de la 
 # Ejercicio 3: practicando con comparators
 
 Utilizando la clase Persona, y partiendo de la lista, muestra diferentes listados:
-- Por dni.
+- Por fecha de nacimiento.
 - Por nombre y apellidos.
 
 ```
