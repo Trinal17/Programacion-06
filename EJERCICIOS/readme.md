@@ -55,3 +55,21 @@ Utilizando la clase Persona, y partiendo de la lista, muestra diferentes listado
         listaPersonas.add(new Persona("45678901D", "María", "López", LocalDate.of(1992, 3, 4)));
 
 ```
+
+# Ejercicio 4: borrar una persona de la lista
+
+Crear un proyecto (es.daw.colecciones)
+
+Crear un ArrayList de personas y borrar la persona cuyo nombre sea X.
+
+```
+        List<Persona> listaPersonas = new ArrayList<>();
+
+        listaPersonas.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1992, 3, 4)));
+        listaPersonas.add(new Persona("34567890C", "Ana", "Ramírez", LocalDate.of(1992, 3, 4)));
+        listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
+        listaPersonas.add(new Persona("34567890Z", "Ana", "Elola", LocalDate.of(1992, 3, 4)));
+        listaPersonas.add(new Persona("45678901D", "María", "López", LocalDate.of(1992, 3, 4)));
+```
+
+
