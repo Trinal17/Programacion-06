@@ -55,12 +55,13 @@ public class EjemploList {
          * LinkedList.
          */
 
-         List<Persona> listaPersonas = new ArrayList<>();
-        //List<Persona> listaPersonas = new LinkedList<>();
+        //List<Persona> listaPersonas = new ArrayList<>();
+        List<Persona> listaPersonas = new LinkedList<>();
 
         listaPersonas.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1992, 3, 4)));
         listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
         listaPersonas.add(new Persona("34567890C", "Ana", "Ramírez", LocalDate.of(1992, 3, 4)));
+        listaPersonas.add(new Persona("34567890Z", "Ana", "Elola", LocalDate.of(1992, 3, 4)));
         listaPersonas.add(new Persona("45678901D", "María", "López", LocalDate.of(1992, 3, 4)));
 
         // Recorrer la lista completa
@@ -76,7 +77,7 @@ public class EjemploList {
         listaPersonas.add(new Persona("56789012E", "Julio", "Azcárate", LocalDate.of(1994, 5, 6)));
 
         // Añadir/modificar un elemento en medio de la lista. Cambio el elemento de la
-        // posición 2 (sustituye Ana por Alfonso y Julio está al final)
+        // posición 3 (sustituye Ana por Alfonso y Julio está al final)
         listaPersonas.set(2, new Persona("67890123F", "Alfonso", "García", LocalDate.of(1995, 6, 7)));
 
         // Añadir un objeto repetido
@@ -104,9 +105,17 @@ public class EjemploList {
         // ************** ORDENACIONES ******************
 
         // FORMA 1: COMPARATOR CLÁSICO DEL RnR
+        // Ordenado por nombre
         listaPersonas.sort(new ComparatorByNombre());
         System.out.println("\nListado de personas por nombre (forma clásica):");
         listaPersonas.forEach(System.out::println);
+
+        // Ordenado por fecha
+        Collections.sort(listaPersonas, new ComparatorByFechaNac());
+        //listaPersonas.sort(new ComparatorByFechaNac());
+        System.out.println("\nListado de personas por fechaNac (forma clásica):");
+        listaPersonas.forEach(System.out::println);
+
 
         
         // FORMA 2: COMPARATOR ANÓNIMO
@@ -123,8 +132,6 @@ public class EjemploList {
         listaPersonas.forEach(System.out::println);
 
         // FORMA 3: COMPARATOR CON LAMBDA
-        // System.out.println("\nListado de personas por fecha de nacimiento (forma lambda):");
-        // listaPersonas.sort((p1,p2) -> p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento()));
 
         System.out.println("\nListado de personas por NOMBRE (forma lambda):");
         listaPersonas.sort((p1,p2) -> p1.getNombre().compareTo(p2.getNombre()));
@@ -134,6 +141,18 @@ public class EjemploList {
         listaPersonas.sort((p1,p2) -> p1.getApellidos().compareTo(p2.getApellidos()));
         listaPersonas.forEach(System.out::println);
         
+        System.out.println("\nListado de personas por fecha de nacimiento (forma lambda):");
+        listaPersonas.sort((p1,p2)->p2.getFechaNacimiento().compareTo(p1.getFechaNacimiento()));
+        
+
+        // DEL EJERCICIO 3: POR NOMBRE Y APELLIDOS
+        System.out.println("**************************************");
+        System.out.println("* EJERCICIO 3: POR NOMBRE Y APELLIDOS");
+        Comparator<Persona> compByNombre = (p1,p2) -> p1.getNombre().compareTo(p2.getNombre()); 
+        //listaPersonas.sort(compByNombre);
+        listaPersonas.sort( compByNombre.thenComparing((p1,p2) -> p1.getApellidos().compareTo(p2.getApellidos())));
+        listaPersonas.forEach(System.out::println);
+        System.out.println("**************************************");
 
         // ------------------------------------------------
         // BUSCAR
@@ -169,7 +188,9 @@ public class EjemploList {
         // ----------------------------------------------
         System.out.println("***************** EJEMPLOS CON API STREAM ***********************");
         System.out.println("\nLista actualizada tras borrar (con API STREAM):");
-        listaPersonas.stream().sorted().forEach(System.out::println);
+        listaPersonas.stream()
+                .sorted()
+                .forEach(System.out::println);
 
         System.out.println("\nLista actualizada tras borrar y ordenar por apellidos (con API STREAM):");
         listaPersonas.stream()

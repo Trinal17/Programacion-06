@@ -35,6 +35,7 @@ public class EjemploListEnteros {
         listInt.add(5);
         listInt.add(1);
         listInt.add(7);
+        listInt.add(5);
 
         System.out.println("* Lista de enteros tal cual:");
         listInt.forEach(System.out::println);
@@ -53,7 +54,8 @@ public class EjemploListEnteros {
         //Collections.sort(listInt2); //Da error
 
         // Si quieres tener una lista mutable
-        ArrayList<Integer> listInt3 = new ArrayList<>(List.of(3,4,2,6,5,1, 7));
+        //ArrayList<Integer> listInt3 = new ArrayList<>(List.of(3,4,2,6,5,1, 7));
+        List<Integer> listInt3 = new ArrayList<>(List.of(3,4,2,6,5,1, 7));
 
         // Para los ejemplos vamos a usar listInt3 (serviría también con listInt)
         System.out.println("* Lista de enteros no ordenada (for..)");
@@ -73,11 +75,11 @@ public class EjemploListEnteros {
         System.out.println("* Lista de enteros ordenada por defecto (ascendente):");
 
         System.out.println("\tForma 1: con Collections.sort");
-        Collections.sort(listInt3); // no da error porque Collection sort devuelve una copia mutable
+        Collections.sort(listInt3);
         listInt3.forEach(System.out::println);
 
         System.out.println("\tForma 2: con sort del ArrayList");
-        listInt3.sort(Comparator.naturalOrder()); // da error porque es inmutable
+        listInt3.sort(Comparator.naturalOrder());
         listInt3.forEach(System.out::println);        
 
         System.out.println("* Lista de enteros ordenada descendente:");
