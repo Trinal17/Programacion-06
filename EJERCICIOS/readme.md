@@ -42,7 +42,7 @@ Que se vea por consola todo el proceso (cada vez que alguien entra o sale de la 
 # Ejercicio 3: practicando con comparators
 
 Utilizando la clase Persona, y partiendo de la lista, muestra diferentes listados:
-- Por dni.
+- Por fecha de nacimiento.
 - Por nombre y apellidos.
 
 ```
@@ -51,6 +51,7 @@ Utilizando la clase Persona, y partiendo de la lista, muestra diferentes listado
         listaPersonas.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1992, 3, 4)));
         listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
         listaPersonas.add(new Persona("34567890C", "Ana", "Ramírez", LocalDate.of(1992, 3, 4)));
+        listaPersonas.add(new Persona("34567890Z", "Ana", "Elola", LocalDate.of(1992, 3, 4)));
         listaPersonas.add(new Persona("45678901D", "María", "López", LocalDate.of(1992, 3, 4)));
 
 ```
