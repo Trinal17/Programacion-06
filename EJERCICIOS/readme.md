@@ -291,9 +291,17 @@ Utilizando la clase Persona, y partiendo de la lista, muestra diferentes listado
 
 # Ejercicio 4: borrar una persona de la lista
 
+## Objetivo: aprender la interface Iterator
+
 Crear un proyecto (es.daw.colecciones)
 
-Crear un ArrayList de personas y borrar la persona cuyo nombre sea X.
+Crear un ArrayList de personas y borrar mientras se recorre la persona cuyo nombre sea X.
+
+Para ello implementa un método llamado borrarPersona, con esta firma:
+
+```
+public static void borrarPersona(String nombre)
+```
 
 ```
         List<Persona> listaPersonas = new ArrayList<>();
