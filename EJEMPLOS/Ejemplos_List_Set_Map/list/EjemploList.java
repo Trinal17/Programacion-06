@@ -55,14 +55,18 @@ public class EjemploList {
          * LinkedList.
          */
 
-        //List<Persona> listaPersonas = new ArrayList<>();
-        List<Persona> listaPersonas = new LinkedList<>();
+        List<Persona> listaPersonas = new ArrayList<>();
+        //List<Persona> listaPersonas = new LinkedList<>();
 
         listaPersonas.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1992, 3, 4)));
-        listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
+        //listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
         listaPersonas.add(new Persona("34567890C", "Ana", "Ramírez", LocalDate.of(1992, 3, 4)));
+        listaPersonas.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));
         listaPersonas.add(new Persona("34567890Z", "Ana", "Elola", LocalDate.of(1992, 3, 4)));
         listaPersonas.add(new Persona("45678901D", "María", "López", LocalDate.of(1992, 3, 4)));
+
+        // Duda de Saúl
+        List<Persona> listaLinkedPersonas = new LinkedList<>(listaPersonas);
 
         // Recorrer la lista completa
         System.out.println("Listado completo de personas:");
@@ -145,29 +149,54 @@ public class EjemploList {
         listaPersonas.sort((p1,p2)->p2.getFechaNacimiento().compareTo(p1.getFechaNacimiento()));
         
 
+        // ----------------------------------
         // DEL EJERCICIO 3: POR NOMBRE Y APELLIDOS
         System.out.println("**************************************");
         System.out.println("* EJERCICIO 3: POR NOMBRE Y APELLIDOS");
+
+        // PRIMERA FORMA: CON DOS COMPARADORES
+        // Creo un objeto comparator
         Comparator<Persona> compByNombre = (p1,p2) -> p1.getNombre().compareTo(p2.getNombre()); 
+        Comparator<Persona> compByApellido = (p1,p2) -> p1.getApellidos().compareTo(p2.getApellidos());
+        // Creo un objeto comparator
+        ComparatorByNombre compByNombre2 = new ComparatorByNombre();
+
         //listaPersonas.sort(compByNombre);
-        listaPersonas.sort( compByNombre.thenComparing((p1,p2) -> p1.getApellidos().compareTo(p2.getApellidos())));
+        listaPersonas.sort( compByNombre.thenComparing(compByApellido));
         listaPersonas.forEach(System.out::println);
+
+
+        // SEGUNDA FORMA: CONCATENANDO ATRIBUTOS
+        Collections.sort(listaPersonas,new ComparatorByNombreCompleto());
         System.out.println("**************************************");
+        // ----------------------------------
 
         // ------------------------------------------------
         // BUSCAR
-        // Quiero encontrar a Alfonso....
-        System.out.println("* Buscar a persona:");
-        Persona Alfonso = new Persona("67890123F", "Alfonso", "García", LocalDate.of(1995, 6, 7));
-        System.out.println(Alfonso);
+        // Quiero encontrar a una persona....
+        // List<Persona> lista = new ArrayList<>();
+        // lista.add(new Persona("12345678A", "Pepe", "Perez", LocalDate.of(1992, 3, 4)));
+        // lista.add(new Persona("34567890C", "Ana", "Ramírez", LocalDate.of(1992, 3, 4)));
+        // lista.add(new Persona("34567890Z", "Ana", "Elola", LocalDate.of(1992, 3, 4)));
+        // lista.add(new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3)));        
+        // lista.add(new Persona("45678901D", "María", "López", LocalDate.of(1992, 3, 4)));        
 
-        // int pos = Collections.binarySearch(listaPersonas, Alfonso); // requisito que Persona implements Comparable
+        System.out.println("* Buscar a persona:");
+        Persona personaBuscar = new Persona("23456789B", "Juan", "Martínez", LocalDate.of(1991, 2, 3));
+        System.out.println(personaBuscar);
+
+        // Collections.sort(lista);
+        // int pos = Collections.binarySearch(lista,personaBuscar);
+
+        // BinarySearch: más eficiente que indexOf pero requiere que la lista esté ordenada.
+        //Collections.sort(listaLinkedPersonas);
+        int pos = Collections.binarySearch(listaLinkedPersonas, personaBuscar); // requisito que Persona implements Comparable
 
         // Comparator<Persona> byNombre = (pa, pb) ->  pa.getNombre().compareTo(pb.getNombre());
         // Collections.sort(listaPersonas, byNombre);
-        // int pos = Collections.binarySearch(listaPersonas, Alfonso, byNombre);
+        // pos = Collections.binarySearch(listaPersonas, Pepe, byNombre);
 
-        // System.out.println("posición encontrada:" + pos);
+        System.out.println("posición encontrada:" + pos);
         // ----------------------------------------------
 
         // ----------------------------------------------
@@ -176,7 +205,7 @@ public class EjemploList {
         // listaPersonas.remove(pos);
 
         // BORRANDO OBJETOS (EQUALS)
-        listaPersonas.remove(Alfonso);
+        listaPersonas.remove(personaBuscar);
 
         System.out.println("\nLista actualizada tras borrar:");
         for (Persona per : listaPersonas)

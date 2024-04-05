@@ -53,7 +53,7 @@ public class EjemploSet {
 
 		// AÑADIR OBJETO REPETIDO
 		// Si tratamos de añadir un elemento repetido...
-		// No da error, simplement no se inserta el nuevo elemento
+		// No da error, simplemente no se inserta el nuevo elemento
 		juntaDirectiva.add(new Persona("11111111D", "María", "López", LocalDate.of(1993, 4, 5)));
 
 		System.out.println("* Listado de personas:");
@@ -62,7 +62,7 @@ public class EjemploSet {
 		for (Persona p : juntaDirectiva)
 			System.out.println(p);
 
-			System.out.println("* Listado de personas en orden descendente:");
+		System.out.println("* Listado de personas en orden descendente:");
 		System.out.println("\t* Con descendingIterator:");
 		Iterator<Persona> it = ((TreeSet<Persona>) juntaDirectiva).descendingIterator();
 		while(it.hasNext())
