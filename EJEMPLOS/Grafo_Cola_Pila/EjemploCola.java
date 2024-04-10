@@ -7,7 +7,7 @@ public class EjemploCola {
      Queue<String> cola = new LinkedList<>();
 
      // Agregar elementos a la cola
-     cola.offer("X");
+     cola.offer("X"); //también con add
      cola.offer("Y");
      cola.offer("Z");
 
@@ -15,7 +15,7 @@ public class EjemploCola {
      System.out.println("Contenido de la cola: " + cola);
 
      // Obtener y eliminar el elemento al frente de la cola
-     String elementoFrente = cola.poll();
+     String elementoFrente = cola.poll(); //también con remove
      System.out.println("Elemento al frente de la cola: " + elementoFrente);
      System.out.println("Contenido de la cola después de poll: " + cola);
 
