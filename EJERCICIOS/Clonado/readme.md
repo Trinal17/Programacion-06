@@ -4,6 +4,65 @@ Con este ejercicio vemos la diferencia de hacer un clonado de ArrayList superfic
 
 ![image](https://user-images.githubusercontent.com/91023374/217520139-4fcccc2d-ebb6-45bd-9b02-3bac8c658209.png)
 
+```
+public class Persona implements Comparable<Persona>{
+    private String nombre;
+    private int edad;
+
+    
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    public Persona(){
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", edad=" + edad + '}';
+    }
+
+    /*
+    @Override
+    public int compareTo(Object t) {
+                
+    }
+    */
+
+    @Override
+    public int compareTo(Persona other) {
+        /*if (other.getEdad() > edad)
+            return -1;
+        else if (edad > other.getEdad())
+            return 1;
+        else
+            return 0;*/
+        
+        return edad - other.getEdad();
+        
+    }
+
+}
+
+```
+
 
 ## TEORÍA: Aclaraciones sobre interface Clonable
 
