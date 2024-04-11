@@ -1,4 +1,4 @@
-# ORDENACIÓN DE PRODUCTOS
+# VERSIÓN 1: ORDENACIÓN DE PRODUCTOS
 
 ## Objetivos
 
@@ -61,3 +61,32 @@ Mostraremos el catálogo de productos en el siguiente orden:
 - ordenados por ancho
 - sin ordenar
 - ordenados por largo
+
+# VERSIÓN 2: PRÁCTICA GUIADA: con Servicio de Ordenación y Patrón Singleton
+
+Aprenderemos a crear un servicio de ordenación (una única instancia)
+
+```
+private static ServicioOrdenacion instance;
+    
+    private ServicioOrdenacion(){
+        listaClonada = new ArrayList<>();
+    }
+    
+    public static ServicioOrdenacion getInstance(){
+        if (instance == null)
+            instance = new ServicioOrdenacion();
+        return instance;
+    }
+```
+
+```
+ServicioOrdenacion servicio = ServicioOrdenacion.getInstance();
+...
+servicio.ordenarAltoProducto(productos);
+...
+servicio.ordenarAnchoProducto(productos);
+...
+servicio.ordenarLargoProducto(productos);
+
+```
