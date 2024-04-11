@@ -63,17 +63,18 @@ public class EjemploSet {
 			System.out.println(p);
 
 		System.out.println("* Listado de personas en orden descendente:");
-		System.out.println("\t* Con descendingIterator:");
-		Iterator<Persona> it = ((TreeSet<Persona>) juntaDirectiva).descendingIterator();
-		while(it.hasNext())
-			System.out.println(it.next());
-
 		System.out.println("\t* Como un ArrayList:");
 		List<Persona> lista = new ArrayList<>(juntaDirectiva); // convierto un Set a un List
 		lista.sort(Comparator.reverseOrder());
 		//lista.sort(Collections.reverseOrder()); // otra forma
 		// lista.sort( (pa,pb) -> pa.getNombre().compareTo(pb.getNombre())); // un comparator solo por nombre...
 		lista.forEach(System.out::println);
+
+		System.out.println("\t* Con descendingIterator:");
+		Iterator<Persona> it = ((TreeSet<Persona>) juntaDirectiva).descendingIterator();
+		while(it.hasNext())
+			System.out.println(it.next());
+
 		
 
 	}
