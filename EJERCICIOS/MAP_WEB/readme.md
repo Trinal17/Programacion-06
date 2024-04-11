@@ -23,6 +23,88 @@ Envía la solicitud y el servlet te responderá:
 
 ## FASE II: aprendiendo a recoger los parámetros con MAP
 
+Como práctica guiada, en clase aprenderás a recoger todos los datos del formulario en un MAP.
 
+![alt text](image-3.png)
 
+Veremos distintas formas de recorrer y pintar el contenido de un MAP.
+
+Mostraremos esos datos por la consola de nuestro servidor.
+
+```
+* PRIMERA FORMA:
+nombre [PEPITO] 
+apellidos [SANCHO] 
+dni [12345678V] 
+localidad [CABO DE GATA] 
+provincia [Almería] 
+fecha [2024-04-11] 
+direccion [DIRECCIÓN ] 
+codpostal [28804] 
+etapa [cou] 
+opcionCOU [DIRECTA] 
+otros [] 
+docs [dni, certificado, otros] 
+otrosDocs [OTRAS COSILLAS] 
+
+* SEGUNDA FORMA (Entry):
+KEY:nombre
+VALUE:PEPITO
+KEY:apellidos
+VALUE:SANCHO
+KEY:dni
+VALUE:12345678V
+KEY:localidad
+VALUE:CABO DE GATA
+KEY:provincia
+VALUE:Almería
+KEY:fecha
+VALUE:2024-04-11
+KEY:direccion
+VALUE:DIRECCIÓN 
+KEY:codpostal
+VALUE:28804
+KEY:etapa
+VALUE:cou
+KEY:opcionCOU
+VALUE:DIRECTA
+KEY:otros
+VALUE:
+KEY:docs
+VALUE:dni
+VALUE:certificado
+VALUE:otros
+KEY:otrosDocs
+VALUE:OTRAS COSILLAS
+
+* TERCERA FORMA (CON ITERATOR):
+KEY:nombre
+VALUE:PEPITO
+KEY:apellidos
+VALUE:SANCHO
+KEY:dni
+VALUE:12345678V
+KEY:localidad
+VALUE:CABO DE GATA
+KEY:provincia
+VALUE:Almería
+KEY:fecha
+VALUE:2024-04-11
+KEY:direccion
+VALUE:DIRECCIÓN 
+KEY:codpostal
+VALUE:28804
+KEY:etapa
+VALUE:cou
+KEY:opcionCOU
+VALUE:DIRECTA
+KEY:otros
+VALUE:
+KEY:docs
+VALUE:dni
+VALUE:certificado
+VALUE:otros
+KEY:otrosDocs
+VALUE:OTRAS COSILLAS
+```
 
