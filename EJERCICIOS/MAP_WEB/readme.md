@@ -3,10 +3,11 @@
 ## FASE I: Pasos
 
 ### Pasos
-1. Descarga el proyecto completo
-2. Con Maven, crea el paquete WAR
-3. Añade dicho paquete a Tomcat (opción Add Deployment)
-4. Visualiza tu proyecto en el navegador (Server Actions/Show in Browser)
+1. Descarga la carpeta del proyecto inicial "mapweb"
+2. Abre el proyecto con Visual Studio Code
+3. Con Maven, crea el paquete WAR
+4. Añade dicho paquete a Tomcat (opción Add Deployment)
+5. Visualiza tu proyecto en el navegador (Server Actions/Show in Browser)
 
 ### Lo que debes obtener
 
