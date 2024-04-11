@@ -2,7 +2,18 @@
 
 ## FASE I: Pasos
 
-### Pasos
+### Teoría y ejemplos asociados
+
+Teoría:
+
+https://aulavirtual3.educa.madrid.org/ies.alonsodeavellan.alcala/mod/book/view.php?id=122109&chapterid=27021
+
+Ejemplos: 
+
+https://github.com/profeMelola/Programacion-06-2023-24/tree/main/EJEMPLOS/Ejemplos_List_Set_Map/map
+
+### Pasos para montar y desplegar el proyecto
+
 1. Descarga la carpeta del proyecto inicial "mapweb"
 2. Abre el proyecto con Visual Studio Code
 3. Con Maven, crea el paquete WAR
@@ -20,6 +31,8 @@ Muestra el formulario:
 Envía la solicitud y el servlet te responderá:
 
 ![alt text](image-2.png)
+
+___
 
 ## FASE II: aprendiendo a recoger los parámetros con MAP
 
