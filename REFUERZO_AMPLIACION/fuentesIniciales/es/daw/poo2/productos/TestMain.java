@@ -1,4 +1,4 @@
-package es.daw.poo2.productos;
+package REFUERZO_AMPLIACION.fuentesIniciales.es.daw.poo2.productos;
 
 import java.util.ArrayList;
 import es.daw.poo2.productos.dao.ProductoDAO;

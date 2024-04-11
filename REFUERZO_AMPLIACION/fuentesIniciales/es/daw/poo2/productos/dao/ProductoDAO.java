@@ -1,5 +1,5 @@
 
-package es.daw.poo2.productos.dao;
+package REFUERZO_AMPLIACION.fuentesIniciales.es.daw.poo2.productos.dao;
 import es.daw.poo2.productos.model.Producto;
 import java.util.ArrayList;
 /**

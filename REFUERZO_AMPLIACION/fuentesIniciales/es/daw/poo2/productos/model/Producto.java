@@ -1,4 +1,4 @@
-package es.daw.poo2.productos.model;
+package REFUERZO_AMPLIACION.fuentesIniciales.es.daw.poo2.productos.model;
 
 
 /**
