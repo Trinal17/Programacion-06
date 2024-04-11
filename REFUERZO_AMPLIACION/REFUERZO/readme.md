@@ -52,9 +52,12 @@ Podremos **ordenar los productos** por cualquiera de estas tres medidas, siempre
 
 ### Pruebas
 
-Mostraremos el catálogo de productos:
-
+Mostraremos el catálogo de productos en el siguiente orden:
+- sin ordenar
 - ordenados por nombre
+- sin ordenar
 - ordenados por alto
+- sin ordenar
 - ordenados por ancho
+- sin ordenar
 - ordenados por largo
