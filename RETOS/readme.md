@@ -21,3 +21,11 @@ numeros.add(9);
 ```
 
 Pinta por consola la lista.
+
+## Reto 2
+
+Crea un programa que obtenga siempre el mismo número aleatorio.
+
+**Pista:**
+
+![image](https://github.com/profeMelola/Programacion-06-2023-24/assets/91023374/338e5f06-39c2-4e2b-943d-e052ba4be57c)
