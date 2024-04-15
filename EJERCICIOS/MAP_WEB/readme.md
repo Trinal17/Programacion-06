@@ -45,7 +45,7 @@ Veremos distintas formas de recorrer y pintar el contenido de un MAP.
 Mostraremos esos datos por la consola de nuestro servidor.
 
 ```
-* PRIMERA FORMA:
+* PRIMERA FORMA con keySet():
 nombre [PEPITO] 
 apellidos [SANCHO] 
 dni [12345678V] 
@@ -60,7 +60,7 @@ otros []
 docs [dni, certificado, otros] 
 otrosDocs [OTRAS COSILLAS] 
 
-* SEGUNDA FORMA (Entry):
+* SEGUNDA FORMA (entrySet()):
 KEY:nombre
 VALUE:PEPITO
 KEY:apellidos
@@ -90,34 +90,5 @@ VALUE:otros
 KEY:otrosDocs
 VALUE:OTRAS COSILLAS
 
-* TERCERA FORMA (CON ITERATOR):
-KEY:nombre
-VALUE:PEPITO
-KEY:apellidos
-VALUE:SANCHO
-KEY:dni
-VALUE:12345678V
-KEY:localidad
-VALUE:CABO DE GATA
-KEY:provincia
-VALUE:Almería
-KEY:fecha
-VALUE:2024-04-11
-KEY:direccion
-VALUE:DIRECCIÓN 
-KEY:codpostal
-VALUE:28804
-KEY:etapa
-VALUE:cou
-KEY:opcionCOU
-VALUE:DIRECTA
-KEY:otros
-VALUE:
-KEY:docs
-VALUE:dni
-VALUE:certificado
-VALUE:otros
-KEY:otrosDocs
-VALUE:OTRAS COSILLAS
 ```
 
