@@ -37,5 +37,12 @@ public class EjemploTabla {
             double nota = entry.getValue();
             System.out.println(nombre + ": " + nota);
         }
+
+        for (String key : notasAlumnos.keySet()) {
+            //System.out.printf("%s %s %n", key, agenda.get(key));
+            System.out.println("* Clave:"+key);
+            System.out.println("* Valor:"+notasAlumnos.get(key));
+        }
+
     }
 }
