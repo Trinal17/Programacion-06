@@ -7,7 +7,7 @@
 
 ## Contenidos
 
-Teoría en el aula virtual: [https://aulavirtual3.educa.madrid.org/ies.alonsodeavellan.alcala/course/view.php?id=526#section-17](https://aulavirtual3.educa.madrid.org/ies.alonsodeavellan.alcala/course/view.php?id=526#section-18)
+Teoría en el aula virtual: [https://aulavirtual3.educa.madrid.org/ies.alonsodeavellan.alcala/course/view.php?id=526#section-17](https://aulavirtual3.educa.madrid.org/ies.alonsodeavellan.alcala/course/view.php?id=526#section-17)
 
 ## Página principal del curso
 
